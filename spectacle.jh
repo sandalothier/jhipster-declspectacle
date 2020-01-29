@@ -1,0 +1,55 @@
+/**
+ * Spectacle entity.
+ * @author sanda
+ *     relation
+   ManyToOne avec Contribuable
+ */
+entity Spectacle {
+    dateSpectacle Date
+    heureDebut Date
+    heureFin Date
+    localite String
+    recette Double
+}
+/**
+ * TypeSpectacle entity.
+ * @author sanda
+ *     relation
+   ManyToOne avec Contribuable
+ */
+entity TypeSpectacle {
+    typeSpectacle String
+}
+/**
+ * ParrainSpectacle entity.
+ * @author sanda
+ *     relation
+   ManyToOne avec Contribuable
+ */
+entity ParrainSpectacle {
+    montantParrainage Double
+}
+/**
+ * ParrainSpectacle entity.
+ * @author sanda
+ *     relation
+   ManyToOne avec Contribuable
+ */
+entity PromoteurSpectacle {
+    motif String
+}
+relationship OneToMany {
+    Spectacle to Regions
+}
+relationship OneToOne {
+    Spectacle to TypeSpectacle
+}
+relationship OneToOne {
+    Spectacle to PromoteurSpectacle
+}
+relationship OneToOne {
+    ParrainSpectacle to Spectacle
+}
+relationship OneToOne {
+    EnteteDeclaration to Spectacle
+}
